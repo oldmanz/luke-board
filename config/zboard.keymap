@@ -9,22 +9,19 @@
 #include <dt-bindings/zmk/bt.h>
 
 
-&mt {
-  flavor = "tap-preferred";
-  tapping_term_ms = <200>;
-};
-
 / { 
 #define BASE 0
-#define FUN 1
+#define NAV 1
+#define NUM 2
+#define SYM 3
+#define FUN 4
 
 combos {
     compatible = "zmk,combos";
-    
     combo_caps {
         layers = <0>;
         timeout-ms = <50>;
-        key-positions = <14 15>;
+        key-positions = <17 20>;
         bindings = <&caps_word>;
     };
      
@@ -34,22 +31,47 @@ combos {
                 
        		base_layer {
 		bindings = <
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&kp ESC   &kp Q      &kp W       &kp E       &kp R      &kp T          &kp Y         &kp U         &kp I         &kp O        &kp P    &kp BSPC 
+		&kp TAB   &kp A      &kp S       &kp D       &kp F      &kp G          &kp H         &kp J         &kp K         &kp L        &kp SQT  &kp RET
+		&kp LSHFT &kp Z      &kp X       &kp C       &kp V      &kp B          &kp N         &kp M         &kp COMMA     &kp DOT      &kp FSLH &kp RSHFT 
+		&kp LCTRL &mo FUN    &kp LMETA   &kp LALT    &kp SPACE  &lt NAV SPACE  &lt NUM SPACE &lt SYM SPACE &kp RALT     &kp RMETA     &kp BSLH &kp RCTRL  
 		>;
 		};
-
-                function_layer {
+       		nav_layer {
 		bindings = <
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
-		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&none 	  &none      &none       &none          &none      &none  			        &none         &kp PG_UP     &kp UP        &kp PG_DN        &none    &none 
+		&none 	  &none      &none       &none          &none      &none      			    &kp HOME      &kp LEFT      &kp DOWN      &kp RIGHT        &kp END    &none 
+		&none 	  &none      &none       &none          &none      &none      			    &none         &none         &none         &none        &none    &none 
+		&none 	  &none      &none       &none          &none      &none        			&none         &none         &none         &none        &none    &none 
+		>;
+		};
+       		num_layer {
+		bindings = <
+		&none 	  &kp LBKT   &kp 7       &kp 8          &kp 9      &kp RBKT   			    &none         &none         &none         &none        &none    &none 
+		&none 	  &kp 0      &kp 4       &kp 5          &kp 6      &kp EQUAL      			&none         &none         &none         &none        &none    &none 
+		&none 	  &kp 0      &kp 1       &kp 2          &kp 3      &kp BSLH      			&none         &none         &none         &none        &none    &none 
+		&none 	  &none      &none       &none          &none      &kp 0        			&none         &none         &none         &none        &none    &none 
 		>;
 		};
 
+		    sym_layer {
+		bindings = <
+		&kp GRAVE &kp LBRC   &kp AMPS    &kp STAR       &kp LPAR       &kp RBRC  			&none         &none         &none         &none        &none    &none 
+        &none     &kp COLON  &kp DLLR    &kp PRCNT      &kp CARET      &kp PLUS       		&none         &none         &none         &none        &none    &none
+        &none     &kp TILDE  &kp EXCL    &kp AT         &kp HASH       &kp PIPE				&none         &none         &none         &none        &none    &none
+		&none 	  &none      &none       &none        &none      &kp 0        			&none         &none         &none         &none        &none    &none 
+		>;
+		};
+
+		    fun_layer {
+		bindings = <
+		&kp F1      &kp F2     &kp F3     &kp F4       &kp F5      &kp F6                   &kp F7         &kp F8         &kp F9        &kp F10    &kp F11  &kp F12 
+		&none 	  &none      &none       &none          &none      &none      			    &none         &none         &none         &none        &none    &none 
+		&none 	  &none      &none       &none          &none      &none      			    &none         &none         &none         &none        &none    &none 
+		&none 	  &none      &none       &none          &none      &none        			&none         &none         &none         &none        &none    &none 
+		>;
+		};
+ 
         
 	};
 };

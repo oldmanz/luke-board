@@ -39,10 +39,10 @@ combos {
 		};
        		nav_layer {
 		bindings = <
-		&none 	  &none      &none       &none          &none      &none  			        &none         &kp PG_UP     &kp UP        &kp PG_DN        &none    &none 
-		&none 	  &none      &none       &none          &none      &none      			    &kp HOME      &kp LEFT      &kp DOWN      &kp RIGHT        &kp END    &none 
-		&none 	  &none      &none       &none          &none      &none      			    &none         &none         &none         &none        &none    &none 
-		&none 	  &none      &none       &none          &none      &none        			&none         &none         &none         &none        &none    &none 
+		&bt BT_CLR &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2   &bt BT_SEL 3  &bt BT_SEL 4  			        &none         &kp PG_UP     &kp UP        &kp PG_DN        &none    &none 
+		&none 	   &none      &none       &none          &none      &none      			        &kp HOME      &kp LEFT      &kp DOWN      &kp RIGHT        &kp END    &none 
+		&none 	   &none      &none       &none          &none      &none      			        &none         &none         &none         &none        &none    &none 
+		&none 	   &none      &none       &none          &none      &none        			    &none         &none         &none         &none        &none    &none 
 		>;
 		};
        		num_layer {

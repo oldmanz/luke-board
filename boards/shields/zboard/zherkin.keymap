@@ -1,0 +1,55 @@
+/*
+ * Copyright (c) 2020 The ZMK Contributors
+ *
+ * SPDX-License-Identifier: MIT
+ */
+
+#include <behaviors.dtsi>
+#include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/bt.h>
+
+
+&mt {
+  flavor = "tap-preferred";
+  tapping_term_ms = <200>;
+};
+
+/ { 
+#define BASE 0
+#define FUN 1
+
+combos {
+    compatible = "zmk,combos";
+    
+    combo_caps {
+        layers = <0>;
+        timeout-ms = <50>;
+        key-positions = <14 15>;
+        bindings = <&caps_word>;
+    };
+     
+};
+        keymap {
+                compatible = "zmk,keymap";
+                
+       		base_layer {
+		bindings = <
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		>;
+		};
+
+                function_layer {
+		bindings = <
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		&kp ESC  &kp Q      &kp W       &kp E          &kp R          &kp T       &kp Y         &kp U         &kp I         &kp O        &kp P   &kp BSPC 
+		>;
+		};
+
+        
+	};
+};
